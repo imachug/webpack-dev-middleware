@@ -33,7 +33,7 @@ module.exports = function(compiler, options) {
 			});
 		}
 
-		if(req.method !== "GET") {
+		if(options.methods.indexOf(req.method) === -1) {
 			return goNext();
 		}
 
